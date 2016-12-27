@@ -29,3 +29,10 @@ def length[A](ls: List[A]): Int =
     case Nil        => 0
     case _ :: tail  => 1 + lengthRecursive(tail)
   }
+
+// Scala 05
+def reverse[A](ls: List[A]): List[A] =
+  ls match {
+    case Nil        => Nil
+    case h :: tail  => reverse(tail) ::: h
+  }
