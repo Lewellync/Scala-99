@@ -22,3 +22,10 @@ def nth[A](index: Int, ls: List[A]): A =
     case (n, h :: tail) => nth(n - 1, tail)
     case (_, Nil      ) => throw new NoSuchElementException
   }
+
+// Scala 04
+def length[A](ls: List[A]): Int =
+  ls match {
+    case Nil        => 0
+    case _ :: tail  => 1 + lengthRecursive(tail)
+  }
